@@ -21,6 +21,43 @@ function randomPosition(){
     return Math.floor(Math.random()*4 + 1);
 }
 
+function randomValue(){
+    return Math.floor(Math.random()*3 + 1);
+}
+
+//------------------------------------------
+var add, sub;
+
+context.clearRect(0, 0, 200, 200);
+
+function drawValue(x, y, value){
+    context.beginPath();
+    context.rect(x, y, 80, 30);
+    context.fillStyle = 'aliceblue';
+    context.fill();
+    context.closePath();
+    for(var i = 0; i < value; i++){
+        context.beginPath();
+        context.rect(x + i * 30, y, 20, 30);
+        context.fillStyle = 'blue';
+        context.fill();
+        context.closePath();
+    }
+}
+
+function Up(){
+    add = randomValue();
+    drawValue(280, 210, add);
+}
+function Down(){
+    sub = randomValue();
+    drawValue(280, 290, sub);
+}
+
+Up();
+Down();
+//------------------------------------------
+
 var randomList = [];
 for (var i = 0; i<6; i++){
     randomList[i] = contactList[i].position;
@@ -69,6 +106,7 @@ function handleButtonUp() {
             drawAnswerList();
         }
     });
+    Up();
 }
 
 function handleButtonDown() {
@@ -79,6 +117,7 @@ function handleButtonDown() {
             drawAnswerList();
         }
     });
+    Down();
 }
 
 function handleButtonPlayAgain(){
