@@ -10,15 +10,29 @@ contactList[4] = new Contact(272, 20, randomPosition());
 contactList[5] = new Contact(337, 20, randomPosition());
 
 var answerList = [];
-answerList[0] = new Contact(12, 480, randomPosition());
-answerList[1] = new Contact(77, 480, randomPosition());
-answerList[2] = new Contact(142, 480, randomPosition());
-answerList[3] = new Contact(207, 480, randomPosition());
-answerList[4] = new Contact(272, 480, randomPosition());
-answerList[5] = new Contact(337, 480, randomPosition());
+answerList[0] = new Contact(12, 480, 1);
+answerList[1] = new Contact(77, 480, 1);
+answerList[2] = new Contact(142, 480, 1);
+answerList[3] = new Contact(207, 480, 1);
+answerList[4] = new Contact(272, 480, 1);
+answerList[5] = new Contact(337, 480, 1);
 
 function randomPosition(){
-    return Math.floor(Math.random()*3 + 1);
+    return Math.floor(Math.random()*4 + 1);
+}
+
+var randomList = [];
+for (var i = 0; i<6; i++){
+    randomList[i] = contactList[i].position;
+    answerList[i].position = random(randomList[i]);
+}
+
+function random(a){
+    var b = randomPosition();
+    while (b == a){
+        b = randomPosition();
+    }
+    return b;
 }
 
 function drawContactList() {
