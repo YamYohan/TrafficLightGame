@@ -2,20 +2,20 @@ var canvas = document.getElementById('game');
 var context = canvas.getContext('2d');
 
 var contactList = [];
-contactList[0] = new Contact(12, 20, 'top');
-contactList[1] = new Contact(77, 20, 'mid');
-contactList[2] = new Contact(142, 20, 'bot');
-contactList[3] = new Contact(207, 20, 'mid');
-contactList[4] = new Contact(272, 20, 'top');
-contactList[5] = new Contact(337, 20, 'bot');
+contactList[0] = new Contact(12, 20, 1);
+contactList[1] = new Contact(77, 20, 2);
+contactList[2] = new Contact(142, 20, 3);
+contactList[3] = new Contact(207, 20, 2);
+contactList[4] = new Contact(272, 20, 1);
+contactList[5] = new Contact(337, 20, 3);
 
 var answerList = [];
-answerList[0] = new Contact(12, 480, 'mid');
-answerList[1] = new Contact(77, 480, 'mid');
-answerList[2] = new Contact(142, 480, 'mid');
-answerList[3] = new Contact(207, 480, 'mid');
-answerList[4] = new Contact(272, 480, 'mid');
-answerList[5] = new Contact(337, 480, 'mid');
+answerList[0] = new Contact(12, 480, 2);
+answerList[1] = new Contact(77, 480, 2);
+answerList[2] = new Contact(142, 480, 2);
+answerList[3] = new Contact(207, 480, 2);
+answerList[4] = new Contact(272, 480, 2);
+answerList[5] = new Contact(337, 480, 2);
 
 function drawContacts() {
     contactList.forEach(function (currentContact) {
@@ -32,7 +32,7 @@ function drawAnser() {
 }
 
 function handleButtonUp() {
-    contactList.forEach(function(currentContact) {
+    contactList.forEach(function (currentContact) {
         if (currentContact.isTargeted) {
             currentContact.shiftUp();
             currentContact.draw();
@@ -41,7 +41,7 @@ function handleButtonUp() {
 }
 
 function handleButtonDown() {
-    contactList.forEach(function(currentContact) {
+    contactList.forEach(function (currentContact) {
         if (currentContact.isTargeted) {
             currentContact.shiftDown();
             currentContact.draw();

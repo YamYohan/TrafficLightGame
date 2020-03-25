@@ -23,7 +23,7 @@ class Contact {
         context.fill();
         context.closePath();
 
-        if (this.status == 'top') {
+        if (this.status == 1) {
             context.beginPath();
             context.rect(this.x, this.y, this.width, this.height / 3);
             context.strokeStyle = this.strokeColor;
@@ -31,7 +31,7 @@ class Contact {
             context.fillStyle = this.color2;
             context.fill();
             context.closePath();
-        } else if (this.status == 'mid') {
+        } else if (this.status == 2) {
             context.beginPath();
             context.rect(this.x, this.y + this.height / 3, this.width, this.height / 3);
             context.strokeStyle = this.strokeColor;
@@ -70,22 +70,22 @@ class Contact {
     }
 
     shiftUp() {
-        if (this.status == 'top') {
-            this.status = 'bot';
-        } else if (this.status == 'mid') {
-            this.status = 'top';
+        if (this.status == 1) {
+            this.status = 3;
+        } else if (this.status == 2) {
+            this.status = 1;
         } else {
-            this.status = 'mid';
+            this.status = 2;
         }
     }
 
     shiftDown() {
-        if (this.status == 'top') {
-            this.status = 'mid';
-        } else if (this.status == 'mid') {
-            this.status = 'bot';
+        if (this.status == 1) {
+            this.status = 2;
+        } else if (this.status == 2) {
+            this.status = 3;
         } else {
-            this.status = 'top';
+            this.status = 1;
         }
     }
 }
