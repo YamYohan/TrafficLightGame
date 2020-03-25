@@ -97,26 +97,21 @@ class Contact {
     }
 
     shiftUp() {
-        if (this.position == 1) {
+        var a = (this.position - add + 4) % 4;
+        if (a == 0) {
             this.position = 4;
-        } else if (this.position == 2) {
-            this.position = 1;
-        } else if (this.position == 3) {
-            this.position = 2;
         } else {
-            this.position = 3;
+            this.position = a;
         }
     }
 
     shiftDown() {
-        if (this.position == 1) {
-            this.position = 2;
-        } else if (this.position == 2) {
-            this.position = 3;
-        } else if (this.position == 3) {
+        var a = (this.position + sub) % 4;
+        if (a == 0) {
             this.position = 4;
         } else {
-            this.position = 1;
+            this.position = a;
         }
+
     }
 }
