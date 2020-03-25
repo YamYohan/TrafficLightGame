@@ -17,14 +17,14 @@ answerList[3] = new Contact(207, 480, 2);
 answerList[4] = new Contact(272, 480, 2);
 answerList[5] = new Contact(337, 480, 2);
 
-function drawContacts() {
+function drawContactList() {
     contactList.forEach(function (currentContact) {
         currentContact.strokeColor = '#000000';
         currentContact.draw();
     })
 }
 
-function drawAnser() {
+function drawAnswerList() {
     answerList.forEach(function (answerList) {
         answerList.strokeColor = '#000000';
         answerList.draw();
@@ -69,6 +69,6 @@ function mousePressed() {
     }
 }
 
-drawContacts();
-drawAnser();
+drawContactList();
+drawAnswerList();
 mousePressed();
