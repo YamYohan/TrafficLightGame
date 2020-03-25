@@ -113,28 +113,31 @@ function key(a){
 
 document.addEventListener("keydown", function(event){
     switch (event.keyCode) {
-        case 38:
+        case 13: //Enter
+            location.reload();
+            break;
+        case 38: //Up Arrow
             handleButtonUp();
             break;
-        case 40:
+        case 40: //Down Arrow
             handleButtonDown();
             break;
-        case 49:
+        case 49: //1
             key(contactList[0]);
             break;
-        case 50:
+        case 50: //2
             key(contactList[1]);
             break;
-        case 51:
+        case 51: //3
             key(contactList[2]);
             break;
-        case 52:
+        case 52: //4
             key(contactList[3]);
             break;
-        case 53:
+        case 53: //5
             key(contactList[4]);
             break;
-        case 54:
+        case 54: //6
             key(contactList[5]);
             break;               
         default:
