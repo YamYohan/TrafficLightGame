@@ -105,6 +105,44 @@ function mousePressed() {
     }
 }
 
+function key(a){
+    a.isTargeted = true;
+    a.strokeColor = '#0000ff';
+    a.draw();
+}
+
+document.addEventListener("keydown", function(event){
+    console.log(event.keyCode);
+    switch (event.keyCode) {
+        case 38:
+            handleButtonUp();
+            break;
+        case 40:
+            handleButtonDown();
+            break;
+        case 49:
+            key(contactList[0]);
+            break;
+        case 50:
+            key(contactList[1]);
+            break;
+        case 51:
+            key(contactList[2]);
+            break;
+        case 52:
+            key(contactList[3]);
+            break;
+        case 53:
+            key(contactList[4]);
+            break;
+        case 54:
+            key(contactList[5]);
+            break;               
+        default:
+            break;
+    }
+})
+
 drawContactList();
 drawAnswerList();
 mousePressed();
