@@ -1,8 +1,8 @@
 class Contact {
-    constructor(x, y, status) {
+    constructor(x, y, position) {
         this.x = x;
         this.y = y;
-        this.status = status;
+        this.position = position;
         this.color1 = '#595959';
         this.color2 = '#ff0000'; //red
         this.color3 = 'yellow';
@@ -23,7 +23,7 @@ class Contact {
         context.fill();
         context.closePath();
 
-        if (this.status == 1) {
+        if (this.position == 1) {
             context.beginPath();
             context.rect(this.x, this.y, this.width, this.height / 3);
             context.strokeStyle = this.strokeColor;
@@ -31,7 +31,7 @@ class Contact {
             context.fillStyle = this.color2;
             context.fill();
             context.closePath();
-        } else if (this.status == 2) {
+        } else if (this.position == 2) {
             context.beginPath();
             context.rect(this.x, this.y + this.height / 3, this.width, this.height / 3);
             context.strokeStyle = this.strokeColor;
@@ -70,22 +70,22 @@ class Contact {
     }
 
     shiftUp() {
-        if (this.status == 1) {
-            this.status = 3;
-        } else if (this.status == 2) {
-            this.status = 1;
+        if (this.position == 1) {
+            this.position = 3;
+        } else if (this.position == 2) {
+            this.position = 1;
         } else {
-            this.status = 2;
+            this.position = 2;
         }
     }
 
     shiftDown() {
-        if (this.status == 1) {
-            this.status = 2;
-        } else if (this.status == 2) {
-            this.status = 3;
+        if (this.position == 1) {
+            this.position = 2;
+        } else if (this.position == 2) {
+            this.position = 3;
         } else {
-            this.status = 1;
+            this.position = 1;
         }
     }
 }
