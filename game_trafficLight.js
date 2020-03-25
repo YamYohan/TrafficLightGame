@@ -112,7 +112,6 @@ function key(a){
 }
 
 document.addEventListener("keydown", function(event){
-    console.log(event.keyCode);
     switch (event.keyCode) {
         case 38:
             handleButtonUp();
